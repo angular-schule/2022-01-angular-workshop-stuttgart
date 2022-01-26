@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.bar = exports.foo = exports.Customer = void 0;
+exports.bbb = exports.aaa = exports.Customer = void 0;
 var Customer = /** @class */ (function () {
     function Customer(id) {
         this.id = id;
@@ -17,8 +17,9 @@ var Customer = /** @class */ (function () {
     return Customer;
 }());
 exports.Customer = Customer;
-function foo() { }
-exports.foo = foo;
-exports.bar = 5;
+function aaa() { }
+exports.aaa = aaa;
+exports.bbb = 5;
+function testfn() { }
 console.log('CCCC');
 //# sourceMappingURL=customer.js.map
