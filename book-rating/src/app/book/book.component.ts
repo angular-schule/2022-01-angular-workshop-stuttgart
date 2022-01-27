@@ -10,7 +10,7 @@ export class BookComponent implements OnInit {
 
   @Input() book?: Book;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }
