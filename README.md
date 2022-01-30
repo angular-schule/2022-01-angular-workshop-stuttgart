@@ -7,6 +7,9 @@
 **Herzlich Willkommen – und schön, dass du dabei bist!**  
 In diesem Repository findest du während des Workshops den Quelltext unserer Beispielanwendung.
 
+> ## RxJS Playground herunterladen
+> [rxjs-playground.zip](https://github.com/angular-schule/2022-01-angular-workshop-stuttgart/files/7965712/rxjs-playground.zip)
+
 # ✅ Vorbereitung
 
 Damit wir gleich durchstarten können, solltest Du ein paar Vorbereitungen treffen.  
