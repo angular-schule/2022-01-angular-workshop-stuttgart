@@ -1,7 +1,9 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 import { Book } from '../shared/book';
 import { BookRatingService } from '../shared/book-rating.service';
+import { BookStoreService } from '../shared/book-store.service';
 
 import { DashboardComponent } from './dashboard.component';
 
@@ -17,12 +19,17 @@ describe('DashboardComponent', () => {
       // rateDown(b: Book) { return b },
     };
 
+    const storeMock = {
+      getAll: () => of([])
+    };
+
     await TestBed.configureTestingModule({
       declarations: [ DashboardComponent ],
       schemas: [NO_ERRORS_SCHEMA], // Shallow Component Test
       providers: [
         // BRS ersetzen: immer wenn jemand BRS anfordert, wird stattdessen ratingMock ausgeliefert
-        { provide: BookRatingService, useValue: ratingMock }
+        { provide: BookRatingService, useValue: ratingMock },
+        { provide: BookStoreService, useValue: storeMock }
       ]
     })
     .compileComponents();

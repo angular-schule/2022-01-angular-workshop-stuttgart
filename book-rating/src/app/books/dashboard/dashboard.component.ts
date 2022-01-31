@@ -33,11 +33,11 @@ export class DashboardComponent implements OnInit {
   }
 
   private updateList(ratedBook: Book) {
-    // [1,2,3,4,5].filter(e => e % 2 === 0)
-    // [1,2,3,4,5].map(e => e * 10)
+    // [1,2,3,4,5].filter(e => e % 2 === 0) // [2,4]
+    // [1,2,3,4,5].map(e => e * 10) // [10,20,30,40,50]
 
     this.books = this.books
-      .map(b => b.isbn === ratedBook.isbn ? ratedBook : b)
+      .map(b => b.isbn === ratedBook.isbn ? ratedBook : b);
 
 
     /*this.books = this.books

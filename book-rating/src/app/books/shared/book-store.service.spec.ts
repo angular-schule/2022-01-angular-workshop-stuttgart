@@ -8,6 +8,7 @@ describe('BookStoreService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(BookStoreService);
+    // HttpClientTestingModule
   });
 
   it('should be created', () => {
