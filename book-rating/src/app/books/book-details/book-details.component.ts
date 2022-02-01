@@ -17,6 +17,7 @@ export class BookDetailsComponent implements OnInit {
     // const isbn = this.route.snapshot.paramMap.get('isbn'); // /books/:isbn
     // console.log(isbn);
 
+
     // PUSH / Asynchroner Weg
     // TODO: Verschachtelte Subscription vermeiden!
     this.route.paramMap.subscribe(params => {
