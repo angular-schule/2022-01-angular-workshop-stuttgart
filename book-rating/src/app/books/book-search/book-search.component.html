@@ -2,3 +2,11 @@
   <input type="text" class="form-control"
     [formControl]="searchControl">
 </div>
+
+<div *ngIf="loading">Loading...</div>
+
+<!-- <div *ngIf="books$ | async as books">
+  <div *ngFor="let book of books">{{ book.title }}</div>
+</div> -->
+
+<div *ngFor="let book of books$ | async">{{ book.title }}</div>
