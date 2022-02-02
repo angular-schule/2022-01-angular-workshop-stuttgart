@@ -24,11 +24,15 @@ export class FromeventComponent {
      */
 
     /******************************/
+    const width$ = fromEvent<ResizeEventType>(window, 'resize').pipe(
+      debounceTime(1000),
+      map(e => e.currentTarget.innerWidth),
+      startWith(window.innerWidth),
+    );
 
-    fromEvent<ResizeEventType>(window, 'resize').pipe(
-      // TODO
-    ).subscribe(e => {
-      console.log(e);
+
+    width$.subscribe(width => {
+      this.currentWidth = width;
     });
 
     /******************************/
