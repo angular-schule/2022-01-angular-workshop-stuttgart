@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { concatMap, map, switchMap } from 'rxjs';
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
 
@@ -19,14 +20,11 @@ export class BookDetailsComponent implements OnInit {
 
 
     // PUSH / Asynchroner Weg
-    // TODO: Verschachtelte Subscription vermeiden!
-    this.route.paramMap.subscribe(params => {
-      const isbn = params.get('isbn')!; // Non-Null Assertion
-      console.log(isbn);
-
-      this.bs.getSingle(isbn).subscribe(book => {
-        this.book = book;
-      });
+    this.route.paramMap.pipe(
+      map(params => params.get('isbn')!),
+      switchMap(isbn => this.bs.getSingle(isbn))
+    ).subscribe(book => {
+      this.book = book;
     });
   }
 
